@@ -1,0 +1,8 @@
+*.orig
+*.tlog
+*.obj
+*.log
+*.pdb
+*.pch
+*.sbr
+*.idb

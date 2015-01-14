@@ -1,0 +1,32 @@
+class_declare => CLASS ID ;
+var => TYPE ID 
+para => var
+para => var , para
+
+statement => if_statement
+statement => while_statement
+statement => for_statement
+statement => declaration
+statement => out_statement
+
+block_item_list => statement
+block_item_list => statement block_item_list
+
+class_member => var ;
+
+func_declare => var( );
+func_declare => var ( para );
+func_impl => var ( para ) { block_item_list }
+func_impl => var ( ) { block_item_list }
+
+class_impl => class_member
+class_impl => func_declare
+class_impl => func_impl
+
+class_impl_list => class_impl
+class_impl_list => class_impl class_impl_list
+
+class_impl => CLASS ID { class_impl_list };
+
+
+start => MAIN ( ) 
